@@ -1,25 +1,46 @@
 module.exports = {
-    parser: '@typescript-eslint/parser', // Specifies the ESLint parser
+    plugins: ['simple-import-sort'],
+    root: true, // Make sure eslint picks up the config at the root of the directory
+    parser: '@typescript-eslint/parser',
     parserOptions: {
-        ecmaVersion: 2020, // Allows for the parsing of modern ECMAScript features
-        sourceType: 'module', // Allows for the use of imports
+        ecmaVersion: 2020, // Use the latest ecmascript standard
+        sourceType: 'module', // Allows using import/export statements
         ecmaFeatures: {
-            jsx: true, // Allows for the parsing of JSX
+            jsx: true, // Enable JSX since we're using React
         },
     },
     settings: {
         react: {
-            version: 'detect', // Tells eslint-plugin-react to automatically detect the version of React to use
+            version: 'detect', // Automatically detect the react version
         },
     },
+    env: {
+        browser: true, // Enables browser globals like window and document
+        amd: true, // Enables require() and define() as global variables as per the amd spec.
+        node: true, // Enables Node.js global variables and Node.js scoping.
+    },
     extends: [
-        'plugin:react/recommended', // Uses the recommended rules from @eslint-plugin-react
-        'plugin:@typescript-eslint/recommended', // Uses the recommended rules from the @typescript-eslint/eslint-plugin
-        'prettier/@typescript-eslint', // Uses eslint-config-prettier to disable ESLint rules from @typescript-eslint/eslint-plugin that would conflict with prettier
-        'plugin:prettier/recommended', // Enables eslint-plugin-prettier and eslint-config-prettier. This will display prettier errors as ESLint errors. Make sure this is always the last configuration in the extends array.
+        'eslint:recommended',
+        'plugin:react/recommended',
+        'plugin:jsx-a11y/recommended',
+        'plugin:@typescript-eslint/eslint-recommended',
+        'plugin:@typescript-eslint/recommended',
+        'plugin:prettier/recommended',
     ],
     rules: {
-        // Place to specify ESLint rules. Can be used to overwrite rules specified from the extended configs
-        // e.g. "@typescript-eslint/explicit-function-return-type": "off",
+        'no-console': ['warn', { allow: ['info', 'warn', 'error'] }],
+        'no-plusplus': 0,
+        'prefer-destructuring': ['warn', { object: true, array: false }],
+        'no-underscore-dangle': 0,
+        '@typescript-eslint/ban-ts-comment': [1, { 'ts-ignore': false, 'ts-nocheck': false }],
+        '@typescript-eslint/no-use-before-define': 0,
+        '@typescript-eslint/explicit-module-boundary-types': 0,
+        '@typescript-eslint/no-explicit-any': 0,
+        radix: 0,
+        'import/no-extraneous-dependencies': 0,
+        'jsx-a11y/media-has-caption': 0,
+        'react/prop-types': 'off',
+
+        // End temporary rules
     },
 };
