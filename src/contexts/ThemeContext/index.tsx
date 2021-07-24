@@ -13,7 +13,7 @@ type Props = {
 const ThemeContextProvider = ({ children }: Props) => {
     const [isDark, setIsDark] = useState(() => {
         const isDarkUserSetting = localStorage.getItem(CACHE_KEY);
-        return isDarkUserSetting ? JSON.parse(isDarkUserSetting) : true;
+        return isDarkUserSetting ? JSON.parse(isDarkUserSetting) : false;
     });
 
     const toggleTheme = () => {
