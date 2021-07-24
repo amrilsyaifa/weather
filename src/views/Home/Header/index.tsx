@@ -4,7 +4,7 @@ import { Container, Title } from './Styles';
 const Header = () => {
     return (
         <Container>
-            <Title>5-day Forecast.</Title>
+            <Title>5-day Forecast</Title>
         </Container>
     );
 };
