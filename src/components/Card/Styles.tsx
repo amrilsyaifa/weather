@@ -16,7 +16,7 @@ export const CardComponent = styled.div<CardComponentProps>`
 `;
 
 export const TitleComponent = styled.div`
-    font-family: Poppins;
+    font-family: Montserrat;
     font-style: normal;
     font-weight: 600;
     font-size: 20px;
@@ -26,7 +26,7 @@ export const TitleComponent = styled.div`
 `;
 
 export const BodyComponent = styled.div`
-    font-family: Poppins;
+    font-family: Montserrat;
     font-style: normal;
     font-weight: normal;
     font-size: 16px;

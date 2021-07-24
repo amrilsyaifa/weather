@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -11,6 +12,12 @@ export const Container = styled.div`
     @media (max-width: 535px) {
         height: 200px;
     }
+`;
+
+export const Wrapper = styled.div`
+    position: absolute;
+    right: 10px;
+    top: 10px;
 `;
 
 export const Title = styled.div`
