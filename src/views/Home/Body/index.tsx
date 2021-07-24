@@ -1,39 +1,29 @@
 import React, { useEffect } from 'react';
-// import Api from 'utils/Api';
 import Card from './Card';
+import useWeather from 'hooks/useWeather';
 import { Container, Content, Wrapper, Text } from './Styles';
 
 const Body = () => {
+    const { getData, list, city } = useWeather();
+
     useEffect(() => {
-        fetchApi();
+        getData();
     }, []);
 
-    const fetchApi = async () => {
-        // const result = await Api('GET', 'forecast?q=new%20york');
-        // console.log('isi result ', result);
-    };
     return (
         <Container>
             <Text fontSize="24px" color="#686868">
-                New York, US
+                {city.name}, {city.country}
             </Text>
             <div />
             <Content>
-                <Wrapper>
-                    <Card />
-                </Wrapper>
-                <Wrapper>
-                    <Card />
-                </Wrapper>
-                <Wrapper>
-                    <Card />
-                </Wrapper>
-                <Wrapper>
-                    <Card />
-                </Wrapper>
-                <Wrapper>
-                    <Card />
-                </Wrapper>
+                {list?.map((val, idx) => {
+                    return (
+                        <Wrapper key={idx}>
+                            <Card data={val} />
+                        </Wrapper>
+                    );
+                })}
             </Content>
         </Container>
     );

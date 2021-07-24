@@ -23,7 +23,7 @@ const SearchInput: React.FC<SearchInputProps> = ({
         <Container style={{ width: !IsEmpty(width) ? width : null }}>
             {!IsEmpty(label) ? <Label error={!IsEmpty(error)}>{label}</Label> : null}
             <WrapperSearchInput>
-                <IconSearch error={!IsEmpty(error)} position={position} />
+                <IconSearch color={!IsEmpty(error) ? '#eb5757' : '#333333'} position={position} />
                 <Input position={position} error={!IsEmpty(error)} {...props} />
             </WrapperSearchInput>
             {!IsEmpty(error) ? (

@@ -14,7 +14,7 @@ export type LabelProps = {
 
 export type IconSearchProps = {
     position: string;
-    error: boolean;
+    color: string;
 };
 
 export type InputProps = {

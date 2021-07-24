@@ -20,7 +20,7 @@ export const IconSearch = styled(SearchOutline)<IconSearchProps>`
     right: ${(props) => (props.position === 'right' ? '15px' : '')};
     top: 9px;
     font-size: 30px;
-    color: ${(props) => (props.error ? '#eb5757' : '#333333')};
+    color: ${(props) => props.color};
 `;
 
 export const WrapperSearchInput = styled.div`
