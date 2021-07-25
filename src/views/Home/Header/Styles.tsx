@@ -21,6 +21,11 @@ export const WrapperRight = styled.div`
     top: 10px;
 `;
 
+export const WrapperSearch = styled.div`
+    display: flex;
+    flex-direction: column;
+`;
+
 export const WrapperLeft = styled.div`
     position: absolute;
     left: 10px;
@@ -54,4 +59,8 @@ export const Title = styled.div`
     @media (max-width: 535px) {
         font-size: 30px;
     }
+`;
+
+export const List = styled.div`
+    cursor: pointer;
 `;

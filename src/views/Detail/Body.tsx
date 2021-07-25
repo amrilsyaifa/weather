@@ -1,7 +1,6 @@
 import React from 'react';
 import moment from 'moment';
 import Card from '../Home/Body/Card';
-// import useWeather from 'hooks/useWeather';
 import { ContainerBody, Content, Text, Wrapper } from './Styles';
 import { BodyProps } from './types';
 
