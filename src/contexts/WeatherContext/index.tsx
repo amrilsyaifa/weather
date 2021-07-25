@@ -3,7 +3,7 @@ import Api from 'utils/Api';
 import { DEFAULT_CITY } from './types';
 import { ObjectToQueryString } from 'helper';
 
-const LIST_KEY = 'list';
+export const LIST_KEY = 'list';
 // const CITY_KEY = 'city';
 
 const WeatherContext = React.createContext({ list: [], city: DEFAULT_CITY, getData: () => null });

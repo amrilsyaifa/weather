@@ -1,7 +1,17 @@
 import styled from 'styled-components';
-import { TextProps, WrapperProps } from './types';
+import { TextProps } from '../Home/Body/types';
 
 export const Container = styled.div`
+    display: flex;
+    flex-direction: column;
+    padding: 10px 30px 10px 30px;
+    @media (max-width: 535px) {
+        padding: 0px;
+        width: 100%;
+    }
+`;
+
+export const ContainerBody = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -26,9 +36,8 @@ export const Content = styled.div`
     }
 `;
 
-export const Wrapper = styled.div<WrapperProps>`
+export const Wrapper = styled.div`
     width: 220px;
-    cursor: ${(props) => props.cursor};
 `;
 
 export const ContentCard = styled.div`

@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import Card from './Card';
 import useWeather from 'hooks/useWeather';
 import { Container, Content, Wrapper, Text } from './Styles';
+import history from 'routerHistory';
 
 const Body = () => {
     const { getData, list, city } = useWeather();
@@ -9,6 +10,13 @@ const Body = () => {
     useEffect(() => {
         getData();
     }, []);
+
+    const onNavigate = (value) => {
+        history.push({
+            pathname: '/detail',
+            search: `?date=${value}`,
+        });
+    };
 
     return (
         <Container>
@@ -19,7 +27,7 @@ const Body = () => {
             <Content>
                 {list?.map((val, idx) => {
                     return (
-                        <Wrapper key={idx}>
+                        <Wrapper key={idx} onClick={() => onNavigate(val.date)} cursor="pointer">
                             <Card data={val} />
                         </Wrapper>
                     );
