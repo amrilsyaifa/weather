@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Page from 'components/Layout/Page';
 import Header from '../Home/Header';
 import { Container } from './Styles';
-import { UseQuery, IsEmpty } from 'helper';
+import { UseQuery, IsEmpty } from 'helpers';
 import history from 'routerHistory';
 import Body from './Body';
 import { LIST_KEY } from 'contexts/WeatherContext';

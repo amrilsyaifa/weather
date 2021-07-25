@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Api from 'utils/Api';
 import { DEFAULT_CITY } from './types';
-import { ObjectToQueryString } from 'helper';
+import { ObjectToQueryString } from 'helpers';
 
 export const LIST_KEY = 'list';
 // const CITY_KEY = 'city';

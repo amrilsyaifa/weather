@@ -1,6 +1,6 @@
 import React from 'react';
 import { SearchInputProps } from './types';
-import { IsEmpty } from 'helper';
+import { IsEmpty } from 'helpers';
 import {
     Container,
     IconInfo,

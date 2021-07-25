@@ -5,7 +5,7 @@ import { HeaderProps } from './types';
 import history from 'routerHistory';
 import Api from 'utils/Api';
 import { Card } from 'components/Card';
-import { ObjectToQueryString, IsEmpty } from 'helper';
+import { ObjectToQueryString, IsEmpty } from 'helpers';
 import useWeather from 'hooks/useWeather';
 import useOutsideClick from 'hooks/useOutsideClick';
 
