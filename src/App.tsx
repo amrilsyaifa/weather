@@ -9,6 +9,7 @@ import history from './routerHistory';
 import { ThemeContext } from 'contexts/ThemeContext';
 
 const Home = lazy(() => import('./views/Home'));
+const Detail = lazy(() => import('./views/Detail'));
 const NotFound = lazy(() => import('./views/NotFound'));
 
 const App: React.FC = () => {
@@ -19,6 +20,7 @@ const App: React.FC = () => {
             <SuspenseWithChunkError fallback={<PageLoader />}>
                 <Switch>
                     <Route path="/" component={Home} exact />
+                    <Route path="/detail" component={Detail} />
 
                     <Route component={NotFound} />
                 </Switch>

@@ -80,5 +80,5 @@
         "lint-staged": "^11.1.0",
         "prettier": "^2.3.2"
     },
-    "proxy": "https://api.openweathermap.org"
+    "proxy": "https://cors-anywhere.herokuapp.com"
 }

@@ -12,6 +12,10 @@ export type CardProps = {
     data: DataProps;
 };
 
+export type WrapperProps = {
+    cursor?: string;
+};
+
 export type DataProps = {
     date: string;
     date_text: string;

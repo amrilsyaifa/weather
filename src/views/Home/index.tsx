@@ -8,7 +8,7 @@ const Home = () => {
     return (
         <Page>
             <Container>
-                <Header />
+                <Header withSearch={true} withBack={false} />
                 <Body />
             </Container>
         </Page>

@@ -21,7 +21,8 @@ const Wrapper = styled.div`
     height: 100% !important;
     position: absolute;
     width: 100% !important;
-    background-color: rgb(33, 36, 41);
+    background-color: #ffffff;
+    width: 100%;
 `;
 
 const Loader = styled.div`
@@ -63,7 +64,7 @@ const Circle2 = styled.div`
 const Text = styled.div`
     font-family: arial;
     font-size: 20px;
-    color: rgb(255, 255, 255);
+    color: rgb(33, 36, 41);
 `;
 
 const PageLoader: React.FC = () => {
