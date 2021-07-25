@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { SearchInput } from 'components/SearchInput';
 import { Container, Title, WrapperRight, WrapperLeft, ButtonBack, TextBack, WrapperSearch, List } from './Styles';
 import { HeaderProps } from './types';
@@ -7,6 +7,7 @@ import Api from 'utils/Api';
 import { Card } from 'components/Card';
 import { ObjectToQueryString, IsEmpty } from 'helper';
 import useWeather from 'hooks/useWeather';
+import useOutsideClick from 'hooks/useOutsideClick';
 
 const Header: React.FC<HeaderProps> = ({ withSearch, withBack }) => {
     const { onSetCity } = useWeather();
@@ -14,6 +15,8 @@ const Header: React.FC<HeaderProps> = ({ withSearch, withBack }) => {
     const [search, setSearch] = useState('');
     const [isDidMount, setIsDidMount] = useState(false);
     const [listCicy, setListCity] = useState([]);
+
+    const boxListRef = useRef(null);
 
     const onBack = () => {
         history.push({
@@ -35,6 +38,10 @@ const Header: React.FC<HeaderProps> = ({ withSearch, withBack }) => {
             setListCity([]);
         }
     }, [search]);
+
+    useOutsideClick(boxListRef, () => {
+        setListCity([]);
+    });
 
     const FindCity = async () => {
         const obj = {
@@ -73,7 +80,7 @@ const Header: React.FC<HeaderProps> = ({ withSearch, withBack }) => {
             ) : null}
             {withSearch ? (
                 <WrapperRight>
-                    <WrapperSearch>
+                    <WrapperSearch ref={boxListRef}>
                         <SearchInput placeholder="Search" value={search} onChange={(e) => setSearch(e.target.value)} />
                         {!IsEmpty(listCicy) ? (
                             <Card>

@@ -53,8 +53,7 @@ const WeatherContextProvider = ({ children }: Props) => {
         }
     };
 
-    const onSetCity = async (val: any) => {
-        setCity(val);
+    const getDataParams = async (val: any) => {
         const obj = {
             q: val.name,
         };
@@ -84,6 +83,11 @@ const WeatherContextProvider = ({ children }: Props) => {
             localStorage.setItem(LIST_KEY, JSON.stringify(groupArrays));
             setCity(result.city);
         }
+    };
+
+    const onSetCity = (val: any) => {
+        setCity(val);
+        getDataParams(val);
     };
 
     return <WeatherContext.Provider value={{ list, city, getData, onSetCity }}>{children}</WeatherContext.Provider>;
